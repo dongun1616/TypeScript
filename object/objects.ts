@@ -6,11 +6,6 @@ printName({ first: "Lim", last: "Dongun" })
 const singer = { first: "Mick", last: "Jagger", age: 47 };
 printName(singer)
 
-type Point = {
-    x: number;
-    y: number;
-};
-
 let coordinate: Point = { x: 34, y: 2 }
 
 function randomCoordinate(): Point {
@@ -49,3 +44,39 @@ const mySong: Song = {
 const earnings = calculatePayout(mySong)
 console.log(earnings);
 printSong(mySong)
+
+
+type Point = {
+    x: number;
+    y: number;
+    z?: number;
+};
+
+const myPoint: Point = { x: 1, y: 3 }
+
+type User = {
+    readonly id: number;
+    username: string;
+}
+
+const user: User = {
+    id: 12827,
+    username: "catgirl"
+}
+
+type Cat = {
+    numLives: number
+}
+type Dog = {
+    breed: string
+}
+
+type CatDog = Cat & Dog & {
+    age: number
+}
+
+const christy: CatDog = {
+    numLives: 7,
+    breed: "Husky",
+    age: 9
+}
