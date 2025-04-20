@@ -9,6 +9,7 @@ type Movie = {
     grossWorldwide: number;
   }
 }
+
 const dune: Movie = {
   title: "Dune",
   originalTitle: "Dune Part One",
