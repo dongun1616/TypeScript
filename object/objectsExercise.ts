@@ -22,7 +22,6 @@ const dune: Movie = {
   },
 };
 
-
 const cats: Movie = {
   title: "Cats",
   director: "Tom Hooper",
