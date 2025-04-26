@@ -7,6 +7,7 @@ type Product = {
     price: number;
 }
 
+
 function getTotal(products: Product[]): number {
     let total = 0;
     for (let product of products) {
