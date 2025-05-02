@@ -19,6 +19,7 @@ function printAge(age: number | string) {
     console.log(`You are ${age} years old`)
 }
 
+
 printAge(23)
 printAge("23")
 
