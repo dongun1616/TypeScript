@@ -23,6 +23,7 @@ function printAge(age: number | string) {
 
 
 
+
 printAge(23)
 printAge("23")
 
