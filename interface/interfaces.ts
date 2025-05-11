@@ -5,6 +5,7 @@ interface Point {
 
 
 
+
 const pt: Point = { x: 123, y: 1234 }
 
 interface Person {
