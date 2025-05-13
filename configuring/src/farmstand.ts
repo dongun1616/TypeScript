@@ -7,3 +7,4 @@ interface Product {
 const printProduct = (product: Product): void => {
     console.log(`${product.name} - ${product.price}`)
 }
+
