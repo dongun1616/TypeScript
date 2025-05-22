@@ -37,6 +37,7 @@ class Player {
 }
 
 
+
 class AdminPlayer extends Player {
     constructor(powers) {
         super();
