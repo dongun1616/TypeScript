@@ -51,3 +51,55 @@ class SuperPlayer extends Player {
 const elton = new Player("Elton", "Steele", 100)
 elton.fullName;
 elton.score = 99;
+
+interface Colorful {
+    color: string;
+}
+
+class Bike implements Colorful {
+    constructor(public color: string) { }
+}
+
+class Jacket implements Colorful {
+    constructor(public brand: string, public color: string) { }
+}
+
+const bike1 = new Bike("red");
+const jacket1 = new Jacket("Prada", "black")
+
+abstract class Employee {
+    constructor(public first: string, public last: string) { }
+    abstract getPay(): number;
+    greet() {
+        console.log("Hello!")
+    }
+}
+
+//정직원 클래스
+class FullTimeEmployee extends Employee {
+    constructor(first: string, last: string, private salary: number) {
+        super(first, last)
+    }
+    getPay(): number {
+        return this.salary;
+    }
+}
+
+//알바생 클래스
+class PartTimeEmployee extends Employee {
+    constructor(first: string,
+        last: string,
+        private hourlyRate: number,
+        private hoursWorked: number) {
+        super(first, last)
+    }
+    getPay(): number {
+        return this.hourlyRate * this.hoursWorked;
+    }
+}
+
+const betty = new FullTimeEmployee("Betty", "White", 95000);
+console.log(betty.getPay())
+
+const bill = new PartTimeEmployee("Bill", "Billerson", 24, 1100);
+console.log(bill.getPay())
