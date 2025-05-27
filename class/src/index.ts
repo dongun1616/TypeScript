@@ -50,7 +50,7 @@ class SuperPlayer extends Player {
 
 const elton = new Player("Elton", "Steele", 100)
 elton.fullName;
-elton.score = 99;
+elton.score = 90;
 
 interface Colorful {
     color: string;
