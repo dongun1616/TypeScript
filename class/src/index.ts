@@ -67,6 +67,7 @@ class Jacket implements Colorful {
 const bike1 = new Bike("red");
 const jacket1 = new Jacket("Prada", "black")
 
+//고용인 클래스
 abstract class Employee {
     constructor(public first: string, public last: string) { }
     abstract getPay(): number;
