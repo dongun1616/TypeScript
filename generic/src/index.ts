@@ -66,6 +66,7 @@ interface Video {
     resolution: string;
 }
 
+
 class PlayList<T> {
     public queue: T[] = [];
     add(el: T) {
