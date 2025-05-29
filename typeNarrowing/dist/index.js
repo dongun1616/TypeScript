@@ -33,4 +33,7 @@ function getRuntime(media) {
     return media.duration;
 }
 console.log(getRuntime({ title: "Amadeus", duration: 140 }));
-console.log(getRuntime({ title: "Amadeus", numEpisodes: 80, episodeDuration: 30 }));
+console.log(getRuntime({
+    title: "Amadeus",
+    numEpisodes: 80, episodeDuration: 30
+}));
