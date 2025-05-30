@@ -6,7 +6,6 @@ function triple(value: number | string) {
     return value * 3;
 }
 
-console.log(triple("type"))
 
 //truthiness 가드 예시
 const printLetters = (word?: string) => {
@@ -19,7 +18,6 @@ const printLetters = (word?: string) => {
         console.log("Not pass in a word!!")
     }
 }
-console.log(printLetters("play"))
 
 //Equality(=) 좁히기 예시
 function someDemo(x: string | number, y: string | boolean) {
@@ -47,8 +45,89 @@ function getRuntime(media: Movie | TVShow) {
     return media.duration;
 }
 
-console.log(getRuntime({ title: "Amadeus", duration: 140 }))
-console.log(getRuntime({
-    title: "Amadeus",
-    numEpisodes: 80, episodeDuration: 30
-}))
+// console.log(getRuntime({ title: "Amadeus", duration: 140 }))
+// console.log(getRuntime({
+//     title: "Amadeus",
+//     numEpisodes: 80, episodeDuration: 30
+// }))
+
+//instanceof 좁히기 예시
+function printFullDate(date: string | Date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
+    }
+    else {
+        console.log(new Date(date).toUTCString())
+    }
+}
+
+//타입 명제 예시
+interface Cat {
+    name: string,
+    numLives: number
+}
+interface Dog {
+    name: string,
+    breed: string
+}
+
+function isCat(animal: Cat | Dog): animal is Cat {
+    return (animal as Cat).numLives !== undefined;
+}
+
+function makeNoise(animal: Cat | Dog): void {
+    if (isCat(animal)) {
+        animal
+    }
+}
+
+//판별 유니온 예시
+interface Rabbit {
+    kind: "rabbit";
+    name: string;
+    weight: number;
+    age: number;
+}
+interface Cow {
+    kind: "cow";
+    name: string;
+    weight: number;
+    age: number;
+}
+interface Pig {
+    kind: "pig";
+    name: string;
+    weight: number;
+    age: number;
+}
+interface Sheep {
+    kind: "sheep";
+    name: string;
+    weight: number;
+    age: number;
+}
+
+type FarmAnimal = Pig | Rabbit | Cow | Sheep;
+
+function getFarmAnimalSound(animal: FarmAnimal) {
+    switch (animal.kind) {
+        case ("pig"):
+            return "Oink!";
+        case ("cow"):
+            return "Moooo!";
+        case ("rabbit"):
+            return "Guncho!";
+        default:
+        // const _exhaustiveCheck: never = animal
+        // return _exhaustiveCheck;
+    }
+}
+
+const stevie: Cow = {
+    kind: "cow",
+    name: "Stevie Gun",
+    weight: 20,
+    age: 3
+}
+
+console.log(getFarmAnimalSound(stevie))

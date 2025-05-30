@@ -6,7 +6,6 @@ function triple(value) {
     }
     return value * 3;
 }
-console.log(triple("type"));
 //truthiness 가드 예시
 const printLetters = (word) => {
     if (word) {
@@ -18,7 +17,6 @@ const printLetters = (word) => {
         console.log("Not pass in a word!!");
     }
 };
-console.log(printLetters("play"));
 //Equality(=) 좁히기 예시
 function someDemo(x, y) {
     if (x === y) {
@@ -32,8 +30,45 @@ function getRuntime(media) {
     }
     return media.duration;
 }
-console.log(getRuntime({ title: "Amadeus", duration: 140 }));
-console.log(getRuntime({
-    title: "Amadeus",
-    numEpisodes: 80, episodeDuration: 30
-}));
+// console.log(getRuntime({ title: "Amadeus", duration: 140 }))
+// console.log(getRuntime({
+//     title: "Amadeus",
+//     numEpisodes: 80, episodeDuration: 30
+// }))
+//instanceof 좁히기 예시
+function printFullDate(date) {
+    if (date instanceof Date) {
+        console.log(date.toUTCString());
+    }
+    else {
+        console.log(new Date(date).toUTCString());
+    }
+}
+function isCat(animal) {
+    return animal.numLives !== undefined;
+}
+function makeNoise(animal) {
+    if (isCat(animal)) {
+        animal;
+    }
+}
+function getFarmAnimalSound(animal) {
+    switch (animal.kind) {
+        case ("pig"):
+            return "Oink!";
+        case ("cow"):
+            return "Moooo!";
+        case ("rabbit"):
+            return "Guncho!";
+        default:
+            const _exhaustiveCheck = animal;
+            return _exhaustiveCheck;
+    }
+}
+const stevie = {
+    kind: "cow",
+    name: "Stevie Gun",
+    weight: 20,
+    age: 3
+};
+console.log(getFarmAnimalSound(stevie));
