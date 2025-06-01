@@ -124,6 +124,7 @@ function getFarmAnimalSound(animal: FarmAnimal) {
 }
 
 
+
 const stevie: Cow = {
     kind: "cow",
     name: "Stevie Gun",
