@@ -38,3 +38,5 @@ function printUser(user: User) {
     console.log(user.email)
     console.log(user.phone)
 }
+
+//test
