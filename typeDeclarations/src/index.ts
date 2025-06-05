@@ -24,7 +24,6 @@ interface User {
     }
 }
 
-
 axios.get<User>("https://jsonplaceholder.typicode.com/users/1")
     .then(res => {
         console.log("Woo!")
@@ -38,5 +37,3 @@ function printUser(user: User) {
     console.log(user.email)
     console.log(user.phone)
 }
-
-//test
