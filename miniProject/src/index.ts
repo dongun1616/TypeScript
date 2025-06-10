@@ -56,6 +56,7 @@ function createTodo(todo: Todo) {
 
 form.addEventListener("submit", handleSubmit)
 
+
 // btn.addEventListener("click", function () {
 //     alert(input.value);
 //     input.value = "";
