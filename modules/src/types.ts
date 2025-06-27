@@ -5,3 +5,4 @@ export interface Person {
 
 export type Color = "red" | "green" | "blue"
 
+
