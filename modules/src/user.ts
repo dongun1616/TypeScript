@@ -9,3 +9,4 @@ export default class User implements Person {
 export function userHelper() {
     console.log("user helper!")
 }
+
