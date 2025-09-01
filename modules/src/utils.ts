@@ -7,3 +7,4 @@ export function sample<T>(arr: T[]): T {
     return arr[idx]
 }
 
+
